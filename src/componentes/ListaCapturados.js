@@ -1,0 +1,1 @@
+//Lista de Pokémon capturados en la Pokédex

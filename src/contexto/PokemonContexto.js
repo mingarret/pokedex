@@ -1,0 +1,1 @@
+//Maneja el estado global de Pokémon capturados en la Pokédex

@@ -1,0 +1,1 @@
+//Tarjeta con la información del Pokémon en la Pokédex

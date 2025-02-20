@@ -1,0 +1,1 @@
+//Botón para liberar Pokémon en la Pokédex

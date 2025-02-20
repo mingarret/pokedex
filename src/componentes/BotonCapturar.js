@@ -1,0 +1,1 @@
+//Botón para capturar Pokémon en la Pokédex
