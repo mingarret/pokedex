@@ -18,8 +18,8 @@ const TarjetaPokemon = ({ pokemon }) => {
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
             <TiposPokemon tipos={pokemon.types} />
 
-            <p><strong>Altura:</strong> {pokemon.height} dm</p>
-            <p><strong>Peso:</strong> {pokemon.weight} hg</p>
+            <p><strong>Altura:</strong> {pokemon.height} cm</p>
+            <p><strong>Peso:</strong> {pokemon.weight} kg</p>
 
             {/* 🔹 Botón para reproducir el sonido del Pokémon */}
             <button onClick={() => reproducirSonido(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name}.mp3`)}>
