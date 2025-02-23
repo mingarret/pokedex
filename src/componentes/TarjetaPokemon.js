@@ -1,19 +1,30 @@
-//Tarjeta con la información del Pokémon en la Pokédex
+import TiposPokemon from './TiposPokemon';
 
-import React from "react";
+// 🔹 Función para reproducir el sonido de un Pokémon   
+const reproducirSonido = (url) => {
+    const audio = new Audio(url);
+    audio.play();
+};
 
+// 🔹 Componente para mostrar la información de un Pokémon
 const TarjetaPokemon = ({ pokemon }) => {
-    // Validamos que los datos del Pokémon existan correctamente antes de renderizar
-    if (!pokemon || !pokemon.sprites || !pokemon.sprites.front_default) { // Si no hay datos del Pokémon o no hay imagen, no muestra nada en la tarjeta
-        return null; // No muestra nada si no hay datos válidos
+    if (!pokemon || !pokemon.sprites || !pokemon.sprites.front_default) {
+        return null;
     }
 
     return (
         <div className="tarjeta">
             <h3>{pokemon.name}</h3>
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-            <p><strong>Altura:</strong> {pokemon.height} cm</p>
-            <p><strong>Peso:</strong> {pokemon.weight} Kg</p>
+            <TiposPokemon tipos={pokemon.types} />
+
+            <p><strong>Altura:</strong> {pokemon.height} dm</p>
+            <p><strong>Peso:</strong> {pokemon.weight} hg</p>
+
+            {/* 🔹 Botón para reproducir el sonido del Pokémon */}
+            <button onClick={() => reproducirSonido(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name}.mp3`)}>
+                🔊 Escuchar Sonido
+            </button>
         </div>
     );
 };

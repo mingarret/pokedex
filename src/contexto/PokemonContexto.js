@@ -22,6 +22,7 @@ const reducer = (estado, accion) => {
 export const PokemonProveedor = ({ children }) => {
     const [capturados, dispatch] = useReducer(reducer, []);
 
+    // Cargar los datos guardados en el localStorage
     useEffect(() => {
         const datosGuardados = JSON.parse(localStorage.getItem("capturados"));
         if (datosGuardados) {
@@ -29,10 +30,12 @@ export const PokemonProveedor = ({ children }) => {
         }
     }, []);
 
+    // Guardar los datos en el localStorage
     useEffect(() => {
         localStorage.setItem("capturados", JSON.stringify(capturados));
     }, [capturados]);
 
+    // Pasamos el estado y la función de dispatch al contexto
     return (
         <PokemonContexto.Provider value={{ capturados, dispatch }}>
             {children}
