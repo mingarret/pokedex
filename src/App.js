@@ -6,22 +6,15 @@ import BuscadorPokemon from "./componentes/BuscadorPokemon";
 import ListaCapturados from "./componentes/ListaCapturados";
 import Navbar from "./componentes/Navbar";
 import "./estilos.css";  // Importamos los estilos
-import fondo from "./assets/Pokemon-gifs-19.gif";  // 🔹 Importamos el GIF
+import fondo from "./assets/poke.gif";  // Importamos el GIF si está en `src/assets/`
 
 const App = () => {
     const [vista, setVista] = useState("busqueda");
 
     return (
         <PokemonProveedor>
-            <div 
-                className="contenedor"
-                style={{
-                    backgroundImage: `url(${fondo})`, 
-                    backgroundSize: "cover",
-                    backgroundRepeat: "repeat",
-                    height: "100vh"
-                }}
-            >
+            <div className="contenedor">
+                <img src={fondo} alt="Fondo Pokémon" className="fondo-gif" />
                 <h1>Pokédex</h1>
                 <Navbar setVista={setVista} />
                 {vista === "busqueda" && <BuscadorPokemon />}

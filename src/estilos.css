@@ -126,3 +126,10 @@ nav button:hover {
   background-color: #005fa3;
 }
 
+.fondo-gif {
+  width: 100%;  /* 🔹 Ajusta el ancho al tamaño del `div` */
+  height: auto; /* 🔹 Mantiene la proporción original */
+  max-width: 800px; /* 🔹 Evita que sea demasiado grande */
+  display: block;
+  margin: auto; /* 🔹 Centra la imagen */
+}
